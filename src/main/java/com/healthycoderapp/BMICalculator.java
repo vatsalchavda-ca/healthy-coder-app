@@ -16,8 +16,10 @@ public class BMICalculator {
 	}
 
 	public static Coder findCoderWithWorstBMI(List<Coder> coders) {
-		return coders.stream().sorted(Comparator.comparing(BMICalculator::calculateBMI))
-				.reduce((first, second) -> second).orElse(null);
+		return coders.stream()
+				.sorted(Comparator.comparing(BMICalculator::calculateBMI))
+				.reduce((first, second) -> second)
+				.orElse(null);
 	}
 
 	public static double[] getBMIScores(List<Coder> coders) {
